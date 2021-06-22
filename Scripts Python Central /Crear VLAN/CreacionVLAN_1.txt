@@ -1,0 +1,115 @@
+%_sys_template_header%
+%_sys_module_command%
+hostname "%_sys_hostname%"
+include-credentials
+snmpv3 engineid "%_sys_snmpv3_engineid%"
+ip default-gateway %gw%
+ip dns server-address priority 1 4.2.2.2
+%if password%
+password manager user-name "admin" plaintext %password%
+%else%
+password manager user-name "admin" sha1 "590aaa3c61eaf93af457a17a2eaa8fdf88253b07"
+%endif%
+interface 1
+	%int.1.state%
+    exit
+interface 2
+	%int.2.state%
+    exit
+interface 3
+	%int.3.state%
+    exit
+interface 4
+	%int.4.state%
+    exit
+interface 5
+	%int.5.state%
+    exit
+interface 6
+	%int.6.state%
+    exit
+interface 7
+	%int.7.state%
+    exit
+interface 8
+	%int.8.state%
+    exit
+interface 9
+	%int.9.state%
+    exit
+interface 10
+	%int.10.state%        
+    exit
+
+vlan 10
+   name "MGMT"
+   %if vlan.10.untagged%
+   untagged %vlan.10.untagged%
+   %endif%
+   %if vlan.10.tagged%
+   tagged %vlan.10.tagged%
+   %endif%
+   ip address %ip% %mask%
+   exit
+
+vlan 1
+   name "Primary"
+   %if vlan.1.untagged%
+   untagged %vlan.1.untagged%
+   %endif%
+   %if vlan.1.tagged%
+   tagged %vlan.1.tagged%
+   %endif%
+   ip address dhcp-bootp
+   exit
+
+vlan 2
+   name "Usuarios2"
+   %if vlan.2.untagged%
+   untagged %vlan.2.untagged%
+   %endif%
+   %if vlan.2.tagged%
+   tagged %vlan.2.tagged%
+   %endif%
+   ip address dhcp-bootp
+   exit
+
+vlan 3
+   name "Usuarios3"
+   %if vlan.3.untagged%
+   untagged %vlan.3.untagged%
+   %endif%
+   %if vlan.3.tagged%
+   tagged %vlan.3.tagged%
+   %endif%
+   no ip address
+   exit
+
+vlan 4
+   name "Usuarios4"
+   %if vlan.4.untagged%
+   untagged %vlan.4.untagged%
+   %endif%
+   %if vlan.4.tagged%
+   tagged %vlan.4.tagged%
+   %endif%
+   no ip address
+   exit
+
+vlan 5
+   name "Usuarios5"
+   %if vlan.5.untagged%
+   untagged %vlan.5.untagged%
+   %endif%
+   %if vlan.5.tagged%
+   tagged %vlan.5.tagged%
+   %endif%
+   no ip address
+   exit
+
+%if vlan.id.new1%
+vlan %vlan.id.new1%
+	name "%vlan.id.nombre1%"
+	exit
+%endif%
+
