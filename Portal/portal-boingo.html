@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Base</title>
+</head>
+<body>
+    <h1>Portal Cautivo Pruebas - MCA</h1>
+    <!-- <form method="POST" ACTION="http://network-login.arubalab.net/swarm.cgi"> -->
+    <form method="POST" ACTION="http://network-login.arubalab.net/cgi-bin/login?">
+        <input type="hidden" name="cmd" value="authenticate" />
+		User Name: <br/> <input type="text" name="user" id="user"/>
+		<br/>
+		Password: <br/> <input type="password" name="password" id="password"/>
+		<br/>
+
+	<input type="submit" value="Login"/>
+
+    <form action="https://hotspot.acmewireless.com:8090/goform/HtmlLoginRequest" method="POST" id="terms" name="terms" onSubmit="return boingo_login_submit(this);">          
+        <div class="form_row" id="partner_array_row">             
+            <label for="partner_array" id="partner_array_label">Roaming Partners</label>             
+            <select id="partner_array" name="partner_array" onChange="setPartnerInfo(this);">
+                <option value=""  selected >Boingo</option> 
+                <option value="" >Wireless G</option> <option value="" >Orange Business Services</option>
+    <option value="" >Telefonica</option> </select>     </div>
+    <div id="instructions">&nbsp;</div>       
+     <div class="form_row" id="username_row">
+         <label for="username">Username</label>
+          <input type="text" class="roaming_text_input" id="username" name="username" value="" /></div>     
+            <div class="form_row" id="password_row"><label for="password">Password</label> 
+                <input type="password" class="roaming_text_input" id="password" name="password" value="" /></div>          <p id="eula_p">                   
+                       <input type='hidden' name='landingPage' value='http%3A%2F%2Fc01.client.boingo.com%2Fuam%2Fozn%2F' />           
+                         <div class="form_row" id="login_row">
+                             <input class="buttons btn_login_en" id="button" name="button" value="Login" type="submit" alt="Click here to login."  /></div>      
+                           </p>     
+                            </form>
+
+  </form>
+</body>
+</html>
